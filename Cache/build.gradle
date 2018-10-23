@@ -35,8 +35,19 @@ dependencies {
     implementation cacheDependencies.kotlin
     implementation cacheDependencies.javaxInject
     implementation cacheDependencies.rxKotlin
+    implementation cacheDependencies.roomRxJava
     implementation cacheDependencies.roomRuntime
     kapt cacheDependencies.roomCompiler
+
+    testImplementation cacheTestDependencies.junit
+    testImplementation cacheTestDependencies.kotlinJUnit
+    testImplementation cacheTestDependencies.assertj
+    testImplementation cacheTestDependencies.mockito
+    testImplementation cacheTestDependencies.roomTesting
+    testImplementation cacheTestDependencies.archTesting
+    testImplementation cacheTestDependencies.supportRunner
+    testImplementation cacheTestDependencies.supportRules
+    testImplementation cacheTestDependencies.robolectric
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
