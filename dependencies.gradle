@@ -19,6 +19,8 @@ ext {
     okHttpVersion = '3.11.0'
     retrofitVersion = '2.4.0'
     roomVersion = '1.1.1'
+    archCompVersion = '1.0.0'
+    rxAndroidVersion = '2.1.0'
 
     //Testing
     jUnitVersion = '4.12'
@@ -105,6 +107,28 @@ ext {
             supportRunner: "com.android.support.test:runner:${androidSupportRunnerVersion}",
             supportRules : "com.android.support.test:rules:${androidSupportRunnerVersion}",
             robolectric  : "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
+    presentationDependencies = [
+            daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger            : "com.google.dagger:dagger:${daggerVersion}",
+            rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation   : "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            archRuntime       : "android.arch.lifecycle:runtime:${archCompVersion}",
+            archExtensions    : "android.arch.lifecycle:extensions:${archCompVersion}",
+            archCompiler      : "android.arch.lifecycle:compiler:${archCompVersion}"
+    ]
+
+    presentationTestDependencies = [
+            junit      : "junit:junit:${jUnitVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}"
     ]
 
 }
