@@ -18,7 +18,15 @@ object ProjectDataFactory {
             DataFactory.randomString(), DataFactory.randomString(),
             DataFactory.randomString(), DataFactory.randomString(),
             DataFactory.randomString(), DataFactory.randomString(),
-            DataFactory.randomBoolean())
+            false)
+    }
+
+    fun makeBookmarkedProjectEntity() : ProjectEntity {
+        return ProjectEntity(DataFactory.randomString(),
+            DataFactory.randomString(), DataFactory.randomString(),
+            DataFactory.randomString(), DataFactory.randomString(),
+            DataFactory.randomString(), DataFactory.randomString(),
+            true)
     }
 
     fun makeBookmarkedCachedProject() : CachedProject {

@@ -5,4 +5,4 @@ import android.arch.persistence.room.PrimaryKey
 import io.caster.tutorial.cache.db.ConfigConstants
 
 @Entity(tableName = ConfigConstants.TABLE_NAME)
-class Config(@PrimaryKey val lastCacheTime: Long)
+class Config(val lastCacheTime: Long, @PrimaryKey(autoGenerate = true) var id: Int = -1)
