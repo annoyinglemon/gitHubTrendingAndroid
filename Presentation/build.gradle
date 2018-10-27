@@ -31,7 +31,6 @@ dependencies {
 
 
     implementation project(":Domain")
-    implementation presentationDependencies.daggerCompiler
     implementation presentationDependencies.dagger
     implementation presentationDependencies.rxKotlin
     implementation presentationDependencies.kotlin
@@ -40,14 +39,16 @@ dependencies {
     implementation presentationDependencies.javaxInject
     implementation presentationDependencies.androidAnnotations
     implementation presentationDependencies.archRuntime
+    implementation presentationDependencies.archExtensions
     implementation presentationDependencies.androidAnnotations
-    implementation presentationDependencies.archCompiler
+    annotationProcessor  presentationDependencies.archCompiler
+    annotationProcessor presentationDependencies.daggerCompiler
 
-
-    implementation presentationTestDependencies.junit
-    implementation presentationTestDependencies.kotlinJUnit
-    implementation presentationTestDependencies.assertj
-    implementation presentationTestDependencies.mockito
-    implementation presentationTestDependencies.robolectric
+    testImplementation presentationTestDependencies.junit
+    testImplementation presentationTestDependencies.kotlinJUnit
+    testImplementation presentationTestDependencies.assertj
+    testImplementation presentationTestDependencies.mockito
+    testImplementation presentationTestDependencies.robolectric
+    testImplementation presentationTestDependencies.archTesting
 
 }
