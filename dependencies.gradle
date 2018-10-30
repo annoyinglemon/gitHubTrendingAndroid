@@ -9,6 +9,8 @@ ext {
 
     //Libraries
     supportLibraryVersion = '28.0.0'
+    timberVersion = '4.7.1'
+    glideVersion = '4.8.0'
     rxJavaVersion = '2.3.0'
     javaxAnnotationVersion = '1.3.2'
     javaxInjectVersion = '1'
@@ -21,6 +23,7 @@ ext {
     roomVersion = '1.1.1'
     archCompVersion = '1.1.1'
     rxAndroidVersion = '2.1.0'
+    glassfishAnnotationVersion = '10.0-b28'
 
     //Testing
     jUnitVersion = '4.12'
@@ -30,6 +33,8 @@ ext {
     mockitoVersion = '2.23.0'
     androidSupportRunnerVersion = '1.0.2'
     androidSupportRulesVersion = '1.0.2'
+    espressoVersion = '3.0.0'
+    androidTestRunner = '1.0.0'
 
     // required by domain layer ('Domain' module)
     domainDependencies = [
@@ -47,7 +52,7 @@ ext {
     // required by data layer ('Data' module)
     dataDependencies = [
             rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             javaxAnnotation: "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}"
     ]
@@ -63,7 +68,7 @@ ext {
     remoteDependencies = [
             gson              : "com.google.code.gson:gson:${gsonVersion}",
             rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             javaxAnnotation   : "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
             javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
@@ -88,7 +93,7 @@ ext {
             dagger            : "com.google.dagger:dagger:${daggerVersion}",
             gson              : "com.google.code.gson:gson:${gsonVersion}",
             rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             javaxAnnotation   : "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
             javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
@@ -113,7 +118,7 @@ ext {
             daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger            : "com.google.dagger:dagger:${daggerVersion}",
             rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
             javaxAnnotation   : "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
             javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
@@ -129,7 +134,46 @@ ext {
             assertj    : "org.assertj:assertj-core:${assertJVersion}",
             mockito    : "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
             robolectric: "org.robolectric:robolectric:${robolectricVersion}",
-            archTesting  : "android.arch.core:core-testing:${archCompVersion}"
+            archTesting: "android.arch.core:core-testing:${archCompVersion}"
+    ]
+
+    mobileUiDependencies = [
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            rxKotlin           : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            glide              : "com.github.bumptech.glide:glide:${glideVersion}",
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            javaxAnnotation    : "javax.annotation:javax.annotation-api:${javaxAnnotationVersion}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations : "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            androidSupportV4   : "com.android.support:support-v4:${supportLibraryVersion}",
+            androidSupportV13  : "com.android.support:support-v13:${supportLibraryVersion}",
+            appCompatV7        : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            supportRecyclerView: "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+            supportDesign      : "com.android.support:design:${supportLibraryVersion}",
+            timber             : "com.jakewharton.timber:timber:${timberVersion}",
+            daggerSupport      : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
+            roomRuntime        : "android.arch.persistence.room:runtime:${roomVersion}",
+            roomCompiler       : "android.arch.persistence.room:compiler:${roomVersion}",
+            roomRxJava         : "android.arch.persistence.room:rxjava2:${roomVersion}"
+    ]
+
+    mobileUiTestDependencies = [
+            junit          : "junit:junit:${jUnitVersion}",
+            kotlinJUnit    : "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            assertj        : "org.assertj:assertj-core:${assertJVersion}",
+            mockito        : "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
+            supportRunner  : "com.android.support.test:runner:${androidSupportRunnerVersion}",
+            supportRules   : "com.android.support.test:rules:${androidSupportRunnerVersion}",
+            mockitoAndroid : "org.mockito:mockito-android:${mockitoVersion}",
+            espressoCore   : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espressoIntents: "com.android.support.test.espresso:espresso-intents:${espressoVersion}",
+            espressoContrib: "com.android.support.test.espresso:espresso-contrib:${espressoVersion}",
+            androidRunner  : "com.android.support.test:runner:${androidTestRunner}",
+            androidRules   : "com.android.support.test:rules:${androidTestRunner}"
     ]
 
 }

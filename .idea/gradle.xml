@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/Presentation" />
             <option value="$PROJECT_DIR$/Remote" />
             <option value="$PROJECT_DIR$/cache" />
+            <option value="$PROJECT_DIR$/mobile_ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
