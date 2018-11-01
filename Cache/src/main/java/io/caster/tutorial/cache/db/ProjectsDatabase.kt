@@ -17,21 +17,23 @@ abstract class ProjectsDatabase @Inject constructor(): RoomDatabase() {
 
     abstract fun configDao(): ConfigDao
 
-    private var INSTANCE: ProjectsDatabase? = null
+    companion object {
+        private var INSTANCE: ProjectsDatabase? = null
 
-    private val lock = Any()
+        private val lock = Any()
 
-    fun getInstance(context: Context) : ProjectsDatabase {
-        if (INSTANCE == null) {
-            synchronized(lock) {
-                if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.applicationContext,
-                        ProjectsDatabase::class.java, "projects.db")
-                        .build()
+        fun getInstance(context: Context) : ProjectsDatabase {
+            if (INSTANCE == null) {
+                synchronized(lock) {
+                    if (INSTANCE == null) {
+                        INSTANCE = Room.databaseBuilder(context.applicationContext,
+                            ProjectsDatabase::class.java, "projects.db")
+                            .build()
+                    }
+                    return INSTANCE as ProjectsDatabase
                 }
-                return INSTANCE as ProjectsDatabase
             }
+            return INSTANCE as ProjectsDatabase
         }
-        return INSTANCE as ProjectsDatabase
     }
 }
