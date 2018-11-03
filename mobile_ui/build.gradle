@@ -37,6 +37,8 @@ dependencies {
     implementation project(":cache")
 
     kapt mobileUiDependencies.daggerCompiler
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation mobileUiDependencies.dagger
     implementation mobileUiDependencies.rxKotlin
     implementation mobileUiDependencies.rxAndroid
