@@ -50,8 +50,6 @@ class BrowseAdapter @Inject constructor(): RecyclerView.Adapter<BrowseAdapter.Vi
         }
     }
 
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-
-    }
+    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view)
 
 }

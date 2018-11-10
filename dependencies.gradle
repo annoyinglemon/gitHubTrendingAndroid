@@ -23,7 +23,6 @@ ext {
     roomVersion = '1.1.1'
     archCompVersion = '1.1.1'
     rxAndroidVersion = '2.1.0'
-    glassfishAnnotationVersion = '10.0-b28'
 
     //Testing
     jUnitVersion = '4.12'
@@ -155,7 +154,9 @@ ext {
             timber             : "com.jakewharton.timber:timber:${timberVersion}",
             daggerSupport      : "com.google.dagger:dagger-android-support:${daggerVersion}",
             daggerProcessor    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
-            glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
+            archExtensions    : "android.arch.lifecycle:extensions:${archCompVersion}",
+            archRuntime       : "android.arch.lifecycle:runtime:${archCompVersion}",
+            archCompiler      : "android.arch.lifecycle:compiler:${archCompVersion}",
             roomRuntime        : "android.arch.persistence.room:runtime:${roomVersion}",
             roomCompiler       : "android.arch.persistence.room:compiler:${roomVersion}",
             roomRxJava         : "android.arch.persistence.room:rxjava2:${roomVersion}"

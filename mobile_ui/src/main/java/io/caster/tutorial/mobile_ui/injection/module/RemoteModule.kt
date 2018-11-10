@@ -6,6 +6,7 @@ import dagger.Provides
 import io.caster.tutorial.data.repository.ProjectsRemote
 import io.caster.tutorial.mobile_ui.BuildConfig
 import io.caster.tutorial.remote.ProjectsRemoteImpl
+import io.caster.tutorial.remote.mapper.ProjectResponseModelMapper
 import io.caster.tutorial.remote.service.GitHubTrendingService
 import io.caster.tutorial.remote.service.GitHubTrendingServiceFactory
 
@@ -18,6 +19,12 @@ abstract class RemoteModule {
         @JvmStatic
         fun provideGithubService(): GitHubTrendingService {
             return GitHubTrendingServiceFactory.makeGitHubTrendingService(BuildConfig.DEBUG)
+        }
+
+        @Provides
+        @JvmStatic
+        fun provideMapper(): ProjectResponseModelMapper {
+            return ProjectResponseModelMapper()
         }
     }
 
