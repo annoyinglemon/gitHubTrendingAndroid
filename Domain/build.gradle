@@ -13,5 +13,5 @@ dependencies {
     testImplementation domainTestDependencies.mockito
 }
 
-sourceCompatibility = "6"
-targetCompatibility = "6"
+sourceCompatibility = "8"
+targetCompatibility = "8"

@@ -23,6 +23,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -35,14 +40,14 @@ dependencies {
     implementation presentationDependencies.rxKotlin
     implementation presentationDependencies.kotlin
     implementation presentationDependencies.rxAndroid
-    implementation presentationDependencies.javaxAnnotation
-    implementation presentationDependencies.javaxInject
+//    implementation presentationDependencies.javaxAnnotation
+//    implementation presentationDependencies.javaxInject
     implementation presentationDependencies.androidAnnotations
     implementation presentationDependencies.archRuntime
     implementation presentationDependencies.archExtensions
     implementation presentationDependencies.androidAnnotations
-    annotationProcessor  presentationDependencies.archCompiler
-    annotationProcessor presentationDependencies.daggerCompiler
+    kapt presentationDependencies.archCompiler
+    kapt presentationDependencies.daggerCompiler
 
     testImplementation presentationTestDependencies.junit
     testImplementation presentationTestDependencies.kotlinJUnit

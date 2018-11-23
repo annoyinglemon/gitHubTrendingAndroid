@@ -25,6 +25,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -55,9 +60,9 @@ dependencies {
     implementation mobileUiDependencies.timber
     implementation mobileUiDependencies.daggerSupport
     kapt mobileUiDependencies.daggerProcessor
-    implementation mobileUiDependencies.glassfishAnnotation
+//    implementation mobileUiDependencies.glassfishAnnotation
     implementation mobileUiDependencies.roomRuntime
-    implementation mobileUiDependencies.roomCompiler
+    kapt mobileUiDependencies.roomCompiler
     implementation mobileUiDependencies.roomRxJava
 
     androidTestImplementation mobileUiTestDependencies.junit
