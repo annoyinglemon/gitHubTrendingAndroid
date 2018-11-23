@@ -6,6 +6,8 @@ import dagger.Module
 import dagger.Provides
 import io.caster.tutorial.cache.ProjectsCacheImpl
 import io.caster.tutorial.cache.db.ProjectsDatabase
+import io.caster.tutorial.cache.mapper.CacheMapper
+import io.caster.tutorial.cache.mapper.CachedProjectMapper
 import io.caster.tutorial.data.repository.ProjectsCache
 
 @Module
@@ -17,6 +19,11 @@ abstract class CacheModule {
         @JvmStatic
         fun providesDatabase(application: Application): ProjectsDatabase {
             return ProjectsDatabase.getInstance(application)
+        }
+        @Provides
+        @JvmStatic
+        fun provideMapper() : CachedProjectMapper {
+            return CachedProjectMapper()
         }
     }
 

@@ -15,7 +15,7 @@ android {
         minSdkVersion globalConfigurations["androidMinSdkVersion"]
         targetSdkVersion globalConfigurations["androidTargetSdkVersion"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -29,7 +29,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 }
 
 dependencies {
@@ -41,9 +40,12 @@ dependencies {
     implementation project(":Remote")
     implementation project(":cache")
 
-    kapt mobileUiDependencies.daggerCompiler
 
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation mobileUiDependencies.archRuntime
+    kapt mobileUiDependencies.archCompiler
+    implementation mobileUiDependencies.archExtensions
     implementation mobileUiDependencies.dagger
     implementation mobileUiDependencies.rxKotlin
     implementation mobileUiDependencies.rxAndroid
@@ -64,9 +66,11 @@ dependencies {
     implementation mobileUiDependencies.roomRuntime
     kapt mobileUiDependencies.roomCompiler
     implementation mobileUiDependencies.roomRxJava
+    kapt mobileUiDependencies.daggerCompiler
+    kapt mobileUiDependencies.daggerProcessor
 
     androidTestImplementation mobileUiTestDependencies.junit
-    androidTestImplementation mobileUiTestDependencies.kotlinJUnit
+    testImplementation mobileUiTestDependencies.kotlinJUnit
     androidTestImplementation mobileUiTestDependencies.assertj
     androidTestImplementation mobileUiTestDependencies.mockito
     androidTestImplementation mobileUiTestDependencies.supportRunner
@@ -93,4 +97,7 @@ dependencies {
     androidTestImplementation (mobileUiTestDependencies.androidRules) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+
+    kaptTest mobileUiDependencies.daggerCompiler
+    kaptAndroidTest mobileUiDependencies.daggerCompiler
 }

@@ -154,6 +154,9 @@ ext {
             timber             : "com.jakewharton.timber:timber:${timberVersion}",
             daggerSupport      : "com.google.dagger:dagger-android-support:${daggerVersion}",
             daggerProcessor    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            archExtensions    : "android.arch.lifecycle:extensions:${archCompVersion}",
+            archRuntime       : "android.arch.lifecycle:runtime:${archCompVersion}",
+            archCompiler      : "android.arch.lifecycle:compiler:${archCompVersion}",
             roomRuntime        : "android.arch.persistence.room:runtime:${roomVersion}",
             roomCompiler       : "android.arch.persistence.room:compiler:${roomVersion}",
             roomRxJava         : "android.arch.persistence.room:rxjava2:${roomVersion}"
